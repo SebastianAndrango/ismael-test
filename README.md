@@ -1,73 +1,61 @@
-# ismael-test
+# Ismael Andrango - Prueba técnica
 
-This project uses Quarkus, the Supersonic Subatomic Java Framework.
+Este proyecto construye dos servicios REST utilizando Java Quarkus:
+-Concatenar cinco parámetros
+-Consumir un API pública (PokeApi)
+Emite mensajes usando EventBus y una tarea programada cada 5 minutos.
 
-If you want to learn more about Quarkus, please visit its website: <https://quarkus.io/>.
+## Requisitos técnicos
 
-## Running the application in dev mode
+-Java 17 o superior
+-Maven 3.5 o superior
 
-You can run your application in dev mode that enables live coding using:
+## Instalación, compilación y ejecución
 
-```shell script
-./mvnw quarkus:dev
+1. Clonar repositorio:
+
+```bash
+git clone git@gitlab.com:developerba-g10/ismael-andrago.git
 ```
 
-> **_NOTE:_**  Quarkus now ships with a Dev UI, which is available in dev mode only at <http://localhost:8080/q/dev/>.
+2. Acceder a la carpeta ismael-test:
 
-## Packaging and running the application
-
-The application can be packaged using:
-
-```shell script
-./mvnw package
+```bash
+cd ismael-test
 ```
 
-It produces the `quarkus-run.jar` file in the `target/quarkus-app/` directory.
-Be aware that it’s not an _über-jar_ as the dependencies are copied into the `target/quarkus-app/lib/` directory.
+3. Compilar el proyecto:
 
-The application is now runnable using `java -jar target/quarkus-app/quarkus-run.jar`.
-
-If you want to build an _über-jar_, execute the following command:
-
-```shell script
-./mvnw package -Dquarkus.package.jar.type=uber-jar
+```bash
+   mvn clean package
 ```
 
-The application, packaged as an _über-jar_, is now runnable using `java -jar target/*-runner.jar`.
+4. Iniciar el proyecto usando Maven en modo desarrollo:
 
-## Creating a native executable
-
-You can create a native executable using:
-
-```shell script
-./mvnw package -Dnative
+```bash
+mvn quarkus:dev
 ```
 
-Or, if you don't have GraalVM installed, you can run the native executable build in a container using:
+## Ejecución usando un Script
 
-```shell script
-./mvnw package -Dnative -Dquarkus.native.container-build=true
+Se debe abrir una terminal BASH.
+
+```bash
+chmod +x start.sh
 ```
 
-You can then execute your native executable with: `./target/ismael-test-1.0.0-SNAPSHOT-runner`
+Iniciar el proyecto en modo desarrollo:
 
-If you want to learn more about building native executables, please consult <https://quarkus.io/guides/maven-tooling>.
+```bash
+./start.sh dev
+```
 
-## Related Guides
+Iniciar el proyecto en modo producción:
 
-- REST Client ([guide](https://quarkus.io/guides/rest-client)): Call REST services
-- REST Jackson ([guide](https://quarkus.io/guides/rest#json-serialisation)): Jackson serialization support for Quarkus REST. This extension is not compatible with the quarkus-resteasy extension, or any of the extensions that depend on it
+```bash
+./start.sh prod
+```
 
-## Provided Code
-
-### REST Client
-
-Invoke different services through REST with JSON
-
-[Related guide section...](https://quarkus.io/guides/rest-client)
-
-### REST
-
-Easily start your REST Web Services
-
-[Related guide section...](https://quarkus.io/guides/getting-started-reactive#reactive-jax-rs-resources)
+## Puertos de ejecución
+- Proyecto: `http://localhost:15050`
+- Swagger UI: `http://localhost:15050/q/swagger-ui`
