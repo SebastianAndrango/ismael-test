@@ -1,14 +1,14 @@
 # Ismael Andrango - Prueba técnica
 
 Este proyecto construye dos servicios REST utilizando Java Quarkus:
--Concatenar cinco parámetros
--Consumir un API pública (PokeApi)
+- Concatenar cinco parámetros
+- Consumir un API pública (PokeApi)
 Emite mensajes usando EventBus y una tarea programada cada 5 minutos.
 
 ## Requisitos técnicos
 
--Java 17 o superior
--Maven 3.5 o superior
+- Java 17 o superior
+- Maven 3.5 o superior
 
 ## Instalación, compilación y ejecución
 
